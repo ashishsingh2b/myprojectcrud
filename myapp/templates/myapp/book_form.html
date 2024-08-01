@@ -1,0 +1,14 @@
+<!-- myapp/templates/myapp/book_form.html -->
+{% extends 'base.html' %}
+
+{% block title %}Book Form{% endblock %}
+
+{% block content %}
+<h1>Book Form</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'book_list' %}">Back to list</a>
+{% endblock %}
